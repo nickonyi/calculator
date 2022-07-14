@@ -11,7 +11,10 @@
 
 <body>
     <div class="calc-box">
-        <div class="calc-screen"></div>
+        <div class="calc-screen">
+            <div class="screenlast" id="lastOperationScreen"></div>
+            <div class="screencurrent" id="currentoperationscreen"></div>
+        </div>
         <div class="all-buttons">
             <button class="all-clear" data-type="backspace" id="all-clear">AC</button>
             <button class="clear" data-type="reset" id="clear">C</button>
@@ -28,7 +31,7 @@
             <button class="digits" data-type="number" id="digits-1" value="1">1</button>
             <button class="digits" data-type="number" id="digit-2" value="2">2</button>
             <button class="digits" data-type="number" id="digit-3" value="3">3</button>
-            <button class="operators" data-type="operator" id="multiply" value="*">x</button>
+            <button class="operators" data-type="operator" id="multiply" value="x">x</button>
             <button class="digits" data-type="number" id="digit-0" value="0">0</button>
             <button class="decimal" data-type="decimal" id="decimal" value=".">.</button>
             <button class="equals" data-type="equal" id="equal" value="=">=</button>
