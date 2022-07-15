@@ -12,12 +12,12 @@
 <body>
     <div class="calc-box">
         <div class="calc-screen">
-            <div class="screenlast" id="lastOperationScreen"></div>
-            <div class="screencurrent" id="currentoperationscreen"></div>
+            <div class="screenlast" data-type="previous-operand" id="lastOperationScreen"></div>
+            <div class="screencurrent" data-type="current-operand" id="currentoperationscreen"></div>
         </div>
         <div class="all-buttons">
-            <button class="all-clear" data-type="backspace" id="all-clear">AC</button>
-            <button class="clear" data-type="reset" id="clear">C</button>
+            <button class="all-clear" data-type="reset" id="all-clear">AC</button>
+            <button class="clear" data-type="backspace" id="clear">C</button>
             <button class="operators" data-type="operator" id="remainder" value="%">%</button>
             <button class="operators" data-type="operator" id="divide" value="/">÷</button>
             <button class="digits" data-type="number" id="digit-7" value="7">7</button>
