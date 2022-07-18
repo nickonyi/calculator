@@ -77,3 +77,12 @@ body {
 .decimal:hover {
     background: #d1cece;
 }
+
+.current-operand {
+    border: 1px solid black;
+    margin-top: 30px;
+}
+
+.last-operand {
+    border: 1px solid green;
+}
