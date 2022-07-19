@@ -19,7 +19,7 @@ class Calculator {
     clear() {
         this.currentOperand = '';
         this.previousOperand = '';
-        this.operation = undefined;
+        this.operation;
     }
 
     appendNumber(number) {
@@ -27,8 +27,13 @@ class Calculator {
         this.currentOperand = this.currentOperand.toString() + number.toString();
     }
     updateDisplay() {
-        this.currentoperandTextElement.textContent = this.currentOperand;
-        this.previousOperandTextElement.textContent = this.previousOperand;
+        this.currentoperandTextElement.textContent = this.getDisplayNumber(this.currentOperand);
+
+        if (this.operation != null) {
+            this.previousOperandTextElement.textContent = `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`;
+        } else {
+            this.previousOperandTextElement = "";
+        }
     }
 
     chooseOperation(operation) {
@@ -60,6 +65,9 @@ class Calculator {
             case "/":
                 computation = prev / current;
                 break;
+            case "%":
+                computation = prev / 100;
+                break;
             default:
                 return;
         }
@@ -68,6 +76,18 @@ class Calculator {
         this.operation = undefined;
         this.previousOperand = "";
 
+    }
+
+    delete() {
+        this.currentOperand = this.currentOperand.toString().slice(0, -1);
+    }
+
+
+    getDisplayNumber(number) {
+        const floatNumber = parseFloat(number);
+
+        if (isNaN(floatNumber)) return '';
+        return floatNumber.toLocaleString('en');
     }
 }
 
@@ -90,5 +110,15 @@ operatorsBtn.forEach(button => {
 
 equalsBtn.addEventListener("click", button => {
     calculator.compute();
+    calculator.updateDisplay();
+});
+
+allClearBtn.addEventListener("click", () => {
+    calculator.clear();
+    calculator.updateDisplay();
+});
+
+clearBtn.addEventListener("click", () => {
+    calculator.delete();
     calculator.updateDisplay();
 });
