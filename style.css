@@ -79,10 +79,17 @@ body {
 }
 
 .current-operand {
-    border: 1px solid black;
-    margin-top: 30px;
+    margin-top: 25px;
+    direction: rtl;
+    font-family: 'Concert One', cursive;
+    font-weight: 700;
+    font-size: 35px;
+    color: #f1eee7;
 }
 
 .last-operand {
-    border: 1px solid green;
+    text-align: right;
+    font-family: 'Concert One', cursive;
+    font-weight: 500;
+    color: #2cdb2c;
 }
