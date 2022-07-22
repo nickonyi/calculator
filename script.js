@@ -92,7 +92,7 @@ class Calculator {
             case "x":
                 computation = prev * current;
                 break;
-            case "/":
+            case "÷":
                 computation = prev / current;
                 break;
             case "%":
@@ -103,8 +103,20 @@ class Calculator {
         }
 
 
+        if (current === 0) {
+            if (prev / current) {
+                alert("Cannot divide by zero");
+                computation = 0;
+            }
+        }
 
-        this.currentOperand = computation;
+        if (computation.toString().includes('.')) {
+            this.currentOperand = computation.toFixed(4);
+        } else {
+            this.currentOperand = computation;
+        }
+
+
         this.operation = undefined;
         this.previousOperand = "";
 
